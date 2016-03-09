@@ -9,11 +9,11 @@
 
   Mean execution times for dataset of size n:
   Batch size: 1000
-  n=1       time: 
-  n=10      time: 
-  n=100     time: 
+  n=1       time: .683 milliseconds 
+  n=10      time: 21.961 milliseconds
+  n=100     time: 52.005 milliseconds
   ...
-  n=<huge>  time: 
+  n=10000  time: 1687.305 milliseconds 
 
   ANALYSIS:
   <INSERT YOUR RESULTS ANALYSIS HERE>
@@ -24,9 +24,11 @@ public class MergeSortTester
 
     /******************************
      * execution time analysis 
-     * <INSERT YOUR DESCRIPTION HERE OF 
-     *  YOUR APPARATUS FOR GENERATING EXECUTION 
-     *  TIME DATA...>
+     * Generate an array of length 1000 to store the runtimes for 1000 trials.
+     * For each of 1000 times, generate a random array of length n of ints from range 0 to 4999999.
+     * Sort this array, and time the time in nanoseconds it takes.
+     * Add this data to the data array.
+     * Average the runtimes in the data array, and report the average in milliseconds.
      ******************************/
     public static void main( String[] args ) {
 	
@@ -40,7 +42,19 @@ public class MergeSortTester
 	    System.out.println("Invalid input.");
 	}
 
-	
+	long[] runtimes = new long[1000]; // stores runtimes of multiple runs
+	for ( int i = 0; i < runtimes.length; i++ ){
+	    int[] arr = populate(n); // randomly unsorted array
+	    
+	    long start = System.nanoTime(); //start timer
+	    MergeSort.sort( arr );
+	    long end = System.nanoTime(); //end timer
+
+	    runtimes[i] = end - start;
+	}
+
+	// print results, time in milliseconds
+	System.out.println( "Average mergesort runtime for 1000 arrays of length " + n + ": \t" + ( mean(runtimes) / 1000 ) );
 
     }//end main
 
@@ -53,6 +67,14 @@ public class MergeSortTester
 	return retInt;
     }
 
+    // returns the average of an array of longs as a double
+    public static double mean(long[] data){
+	double sum = 0.0;
+	for ( int i = 0; i < data.length; i++ ){
+	    sum += data[i];
+	}
+	return (double) sum / data.length;
+    }
     
 
 }//end class
