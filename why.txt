@@ -3,3 +3,9 @@ APCS2 pd10
 HW10 -- Justify
 2016-03-08
 
+Mergesort runtime classification: O(NlogN)
+Justification:
+-The merge sort algorithm comprises of two parts: splitting and merging.
+-It will take a total of logN iterations to continue splitting an array until each subarray has a length of 1. The same number of iterations (logN) will also be needed to reconstruct a single array from the subarrays, since the process of merging is sorting plus the opposite of splitting.
+-The merge process has a O(n) runtime, because a comparison is made for every element.
+-Therefore, if there a logN merges, and each merge performs N iterations, the runtime classification of the whole algorithm is O(NlogN).
