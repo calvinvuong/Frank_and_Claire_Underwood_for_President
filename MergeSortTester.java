@@ -16,14 +16,15 @@
 
   Mean execution times for dataset of size n:
   Batch size: 1000
-  n=1         time: microseconds 
-  n=10        time: microseconds  
-  n=100       time: microseconds 
-  n=1000      time: microseconds 
-  n=10000     time: microseconds 
-  n=100000    time: microseconds 
-  n=1000000   time: microseconds 
-  n=10000000  time: microseconds 
+  n=1         time: 0.41 microseconds 
+  n=10        time: 21.45 microseconds  
+  n=100       time: 48.15 microseconds 
+  n=1000      time: 176.49 microseconds 
+  n=10000     time: 1339.51 microseconds 
+  n=100000    time: 15367.96 microseconds 
+  n=1000000   time: 179021.14 microseconds 
+  n=10000000  time: microseconds
+ 
   ANALYSIS: The runtime seems to be in time of NlogN. 
   From the execution time, it definitely is not running in linear time, or N^2 time. 
   It is also not close to logarithmic runtime. 
@@ -67,7 +68,7 @@ public class MergeSortTester
 	}
 
 	// print results, time in microseconds
-	System.out.println( "Average mergesort runtime for 1000 arrays of length " + n + ": \t" + ( mean(runtimes) / 1000.0 ) );
+	System.out.println( "Average mergesort runtime for 1000 arrays of length " + n + ": \t" + ( mean(runtimes) / 1000.0 ) + " microseconds");
 
     }//end main
 
