@@ -1,8 +1,15 @@
+// Team Frank and Claire Underwood for President -- James Hua and Calvin Vuong
+// APCS2 pd10
+// HW11 -- Wrapping it Up
+// 2016-03-09
+
 /*======================================
   class MergeSortTester
 
   ALGORITHM:
-  This sorting algorithm takes an unsorted array and splits it in half creating two arrays. Then these arrays split until they are a single item array where they then return themselves to be merged with other arrays. Merging takes two sorted arrays and compares the values which will go into a final merged sorted array. So once a single item is returned to its parent, the parent will merge it with the sorted array it gets. Then each array will continually return itself to be merged until the final array is sorted.
+  1. If you have a one element array, return the array.
+  2. If you have more than one element, split the unsorted array into halves until each subarray is a single item long.
+  3. Recursively merge the subarrays from the same immediate parent, going up the split tree, until there is only one array left.
 
   BIG-OH CLASSIFICATION OF ALGORITHM:
   O(NlogN)
@@ -15,7 +22,11 @@
   ...
   n=10000  time: 1687.305 milliseconds 
 
-  ANALYSIS: The runtime seems to be in time of NlogN. From the execution time, it definitely is not running in linear time, or N^2 time. It is also not close to logarithmic runtime. From this we are able to conlude NlogN because the algorithm includes splitting up which is runtime of logN, then it remerges and merging runs in runtime of n. Therefore combining these two togeher, you get runtime of NlogN.
+  ANALYSIS: The runtime seems to be in time of NlogN. 
+  From the execution time, it definitely is not running in linear time, or N^2 time. 
+  It is also not close to logarithmic runtime. 
+  From this we are able to conlude NlogN because the algorithm includes splitting up and merging, which has a runtime of logN, and merging which has a  runtime of n. 
+  Therefore combining these two together, you get runtime of NlogN.
   
   ======================================*/
 
