@@ -2,10 +2,10 @@
   class MergeSortTester
 
   ALGORITHM:
-  <INSERT YOUR DISTILLATION OF ALGO HERE>
+  This sorting algorithm takes an unsorted array and splits it in half creating two arrays. Then these arrays split until they are a single item array where they then return themselves to be merged with other arrays. Merging takes two sorted arrays and compares the values which will go into a final merged sorted array. So once a single item is returned to its parent, the parent will merge it with the sorted array it gets. Then each array will continually return itself to be merged until the final array is sorted.
 
   BIG-OH CLASSIFICATION OF ALGORITHM:
-  <INSERT YOUR EXECUTION TIME CATEGORIZATION OF MERGESORT HERE>
+  O(NlogN)
 
   Mean execution times for dataset of size n:
   Batch size: 1000
@@ -15,8 +15,8 @@
   ...
   n=10000  time: 1687.305 milliseconds 
 
-  ANALYSIS:
-  <INSERT YOUR RESULTS ANALYSIS HERE>
+  ANALYSIS: The runtime seems to be in time of NlogN. From the execution time, it definitely is not running in linear time, or N^2 time. It is also not close to logarithmic runtime. From this we are able to conlude NlogN because the algorithm includes splitting up which is runtime of logN, then it remerges and merging runs in runtime of n. Therefore combining these two togeher, you get runtime of NlogN.
+  
   ======================================*/
 
 public class MergeSortTester 
