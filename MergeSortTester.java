@@ -27,10 +27,10 @@
  
   ANALYSIS: The runtime seems to be in time of NlogN. 
   From the execution time, it definitely is not running in linear time, or N^2 time. 
-  It is also not close to logarithmic runtime. 
-  From this we are able to conlude NlogN because the algorithm includes splitting up and merging, which has a runtime of logN, and merging which has a  runtime of n. 
+  In the beginning it may seem to have a random runtime, but that is because the size of the array is small. However, as the size gets larger and larger, the data set follows NlogN. 
+  We are able to conclude NlogN also because the algorithm includes splitting up and merging, which has a runtime of logN, and merging which has a  runtime of n. 
   Therefore combining these two together, you get runtime of NlogN.
-  
+  With these two observations, we are certain that runtime of MergeSort is NlogN.
   ======================================*/
 
 public class MergeSortTester 
