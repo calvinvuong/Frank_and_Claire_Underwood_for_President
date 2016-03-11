@@ -23,11 +23,12 @@
   n=10000     time: 1339.51 microseconds 
   n=100000    time: 15367.96 microseconds 
   n=1000000   time: 179021.14 microseconds 
-  n=10000000  time: microseconds
+
  
   ANALYSIS: The runtime seems to be in time of NlogN. 
   From the execution time, it definitely is not running in linear time, or N^2 time. 
   In the beginning it may seem to have a random runtime, but that is because the size of the array is small. However, as the size gets larger and larger, the data set follows NlogN. 
+  For example, if we look only at n=100000 and n=1000000, the ratio between 100000log(100000) and 1000000log(1000000) is the same as the ratio between the times for those n values.
   We are able to conclude NlogN also because the algorithm includes splitting up and merging, which has a runtime of logN, and merging which has a  runtime of n. 
   Therefore combining these two together, you get runtime of NlogN.
   With these two observations, we are certain that runtime of MergeSort is NlogN.
